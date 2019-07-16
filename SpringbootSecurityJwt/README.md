@@ -81,6 +81,7 @@ public class JwtTokenFilter extends OncePerRequestFilter {
 ```
 
 > ##### Spring Security的核心配置
+```
 @Configuration
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled=true, securedEnabled = true)
@@ -117,8 +118,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         httpSecurity.headers().cacheControl();
     }
 }
+```
 
 > ##### 权限测试，接口需要限制访问限制，则添加 @PreAuthorize
+```
 @RestController
 public class RoleController {
 
@@ -144,6 +147,7 @@ public class RoleController {
         return "管理员访问";
     }
 }
+```
 
 > 需给用户添加角色才能访问，如下图 用户角色关系表
 
