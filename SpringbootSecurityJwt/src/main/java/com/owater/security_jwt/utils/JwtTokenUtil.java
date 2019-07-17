@@ -59,13 +59,10 @@ public class JwtTokenUtil {
      * 校验token
      *
      * @param token
-     * @param userDetails
      * @return
      */
-    public Boolean validateToken(String token, UserDetails userDetails) {
-        User user = (User) userDetails;
-        final String username = getUsernameFromToken(token);
-        return (username.equals(user.getUsername()) && !isTokenExpired(token));
+    public Boolean validateToken(String token) {
+        return !isTokenExpired(token);
     }
 
     public String getUsernameFromToken(String token) {

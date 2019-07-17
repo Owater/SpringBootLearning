@@ -43,7 +43,7 @@ public class JwtTokenUtil {
     }
     
     // 校验token
-    public Boolean validateToken(String token, UserDetails userDetails) {
+    public Boolean validateToken(String token) {
         ...
     }
 ```
